@@ -21,53 +21,53 @@ import java.io.InputStream;
 public class MainActivity extends Activity {
 
 
-    Button button1, button2;
+    Button preloadBtn, installBtn, startBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button1 = findViewById(R.id.install_btn);
-        button1.setOnClickListener(new View.OnClickListener() {
+        preloadBtn = findViewById(R.id.preloadPlugin);
+        preloadBtn.setOnClickListener(new View.OnClickListener(){
+
             @Override
             public void onClick(View view) {
-                simulateInstallExternalPlugin();
+
             }
         });
-        button2 = findViewById(R.id.start_activity_btn);
-        button2.setOnClickListener(new View.OnClickListener() {
+
+        installBtn = findViewById(R.id.install_btn);
+        installBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                installExternalPlugin();
+            }
+        });
+        startBtn = findViewById(R.id.start_activity_btn);
+        startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                  RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("com.example.kaola.myrepluginpluginapplication", "com.example.kaola.myrepluginpluginapplication.MainActivity"));
 
-                //  if (ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
-                ////           != PackageManager.PERMISSION_GRANTED) {
-                //申请WRITE_EXTERNAL_STORAGE权限
-               // ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                 //       1);
             }
-            //  }
         });
     }
 
-    /**
-     * 模拟安装或升级（覆盖安装）外置插件
-     * 注意：为方便演示，外置插件临时放置到Host的assets/external目录下，具体说明见README</p>
-     */
-    private void simulateInstallExternalPlugin() {
-        String demo3Apk = "apkx.apk";
-        String demo3apkPath = "myapk" + File.separator + demo3Apk;
+
+    private void installExternalPlugin() {
+        String oneAppName = "oneApp.apk";
+        String oneAppPath = "myapk" + File.separator + oneAppName;
 
         // 文件是否已经存在？直接删除重来
-        String pluginFilePath = getFilesDir().getAbsolutePath() + File.separator + demo3Apk;
+        String pluginFilePath = getFilesDir().getAbsolutePath() + File.separator + oneAppName;
         File pluginFile = new File(pluginFilePath);
         if (pluginFile.exists()) {
             FileUtils.deleteQuietly(pluginFile);
         }
 
         // 开始复制
-        copyAssetsFileToAppFiles(demo3apkPath, demo3Apk);
+        copyAssetsFileToAppFiles(oneAppPath, oneAppName);
 
         PluginInfo info = null;
         if (pluginFile.exists()) {
