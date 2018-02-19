@@ -3,6 +3,7 @@ package com.example.kaola.myrepluginhostapplication;
 import android.content.Context;
 import android.util.Log;
 
+import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.RePluginApplication;
 import com.yanzhenjie.permission.Action;
 import com.yanzhenjie.permission.AndPermission;
@@ -35,5 +36,6 @@ public class MyApplication extends RePluginApplication {
             }
         }).start();
         mContext = getApplicationContext();
+        RePlugin.enableDebugger(mContext, true);
     }
 }

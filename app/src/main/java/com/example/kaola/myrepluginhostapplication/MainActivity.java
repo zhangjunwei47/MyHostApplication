@@ -21,7 +21,7 @@ import java.io.InputStream;
 public class MainActivity extends Activity {
 
 
-    Button preloadBtn, installBtn, startBtn;
+    Button preloadBtn, installBtn, startBtn, startTwoBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
 
             @Override
             public void onClick(View view) {
-
+                RePlugin.preload("myplugin1");
             }
         });
 
@@ -48,8 +48,16 @@ public class MainActivity extends Activity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Log.e("logx","xxxxxx onclick begin");
                  RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("com.example.kaola.myrepluginpluginapplication", "com.example.kaola.myrepluginpluginapplication.MainActivity"));
-
+                Log.e("logx","xxxxxx onclick end");
+            }
+        });
+        startTwoBtn = findViewById(R.id.startTwoPlugin);
+        startTwoBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("com.example.kaola.mypluginapplicationtwo", "com.example.kaola.mypluginapplicationtwo.MainActivity"));
             }
         });
     }

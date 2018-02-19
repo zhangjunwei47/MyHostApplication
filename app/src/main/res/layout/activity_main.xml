@@ -13,6 +13,7 @@
         android:layout_height="wrap_content"
         android:text="预加载插件" />
 
+
     <Button
         android:id="@+id/install_btn"
         android:layout_width="wrap_content"
@@ -23,5 +24,11 @@
         android:id="@+id/start_activity_btn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="打开activity" />
+        android:text="开启第一个插件activity" />
+
+    <Button
+        android:id="@+id/startTwoPlugin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="开启第二个插件" />
 </LinearLayout>
