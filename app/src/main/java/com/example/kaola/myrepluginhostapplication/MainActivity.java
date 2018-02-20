@@ -3,9 +3,6 @@ package com.example.kaola.myrepluginhostapplication;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
-import android.support.v4.app.ActivityCompat;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -14,8 +11,6 @@ import android.widget.Button;
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.model.PluginInfo;
 import com.qihoo360.replugin.utils.FileUtils;
-
-import junit.framework.Test;
 
 import java.io.File;
 import java.io.FileOutputStream;

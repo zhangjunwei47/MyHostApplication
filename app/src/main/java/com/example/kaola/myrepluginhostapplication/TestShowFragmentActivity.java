@@ -2,15 +2,8 @@ package com.example.kaola.myrepluginhostapplication;
 
 import android.app.Activity;
 import android.app.Fragment;
-import android.app.FragmentManager;
-import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
-import android.util.AttributeSet;
-import android.util.Log;
-import android.view.View;
 
 import com.qihoo360.replugin.RePlugin;
 
@@ -27,6 +20,10 @@ public class TestShowFragmentActivity extends Activity {
          * "com.example.kaola.myrepluginpluginapplication";
          */
         String pluginName = "myplugin1";
+        /**
+         * 注册相关Fragment的类
+         * 注册一个全局Hook用于拦截系统对XX类的寻找定向到Demo1中的XX类主要是用于在xml中可以直接使用插件中的类
+         */
         RePlugin.registerHookingClass("com.example.kaola.myrepluginpluginapplication.FirstTestFragment", RePlugin.createComponentName(pluginName, "com.example.kaola.myrepluginpluginapplication.FirstTestFragment"), null);
         setContentView(R.layout.activity_show_fragment);
         findViewById(R.id.test_viewx).postDelayed(new Runnable() {
