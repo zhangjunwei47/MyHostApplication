@@ -25,6 +25,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="开启第一个插件activity" />
+    <Button
+        android:id="@+id/start_fragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="获取第一个插件的fragment" />
 
     <Button
         android:id="@+id/startTwoPlugin"

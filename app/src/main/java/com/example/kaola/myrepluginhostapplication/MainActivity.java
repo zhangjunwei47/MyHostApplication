@@ -2,6 +2,7 @@ package com.example.kaola.myrepluginhostapplication;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +15,8 @@ import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.model.PluginInfo;
 import com.qihoo360.replugin.utils.FileUtils;
 
+import junit.framework.Test;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
@@ -21,7 +24,7 @@ import java.io.InputStream;
 public class MainActivity extends Activity {
 
 
-    Button preloadBtn, installBtn, startBtn, startTwoBtn;
+    Button preloadBtn, installBtn, startBtn, startTwoBtn, startFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +61,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("com.example.kaola.mypluginapplicationtwo", "com.example.kaola.mypluginapplicationtwo.MainActivity"));
+            }
+        });
+        startFragment = findViewById(R.id.start_fragment);
+        startFragment.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent();
+                intent.setClass(MainActivity.this, TestShowFragmentActivity.class);
+                startActivity(intent);
             }
         });
     }
