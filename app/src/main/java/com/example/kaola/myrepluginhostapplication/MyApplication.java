@@ -1,7 +1,6 @@
 package com.example.kaola.myrepluginhostapplication;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.qihoo360.replugin.RePlugin;
 import com.qihoo360.replugin.RePluginApplication;
@@ -21,7 +20,6 @@ public class MyApplication extends RePluginApplication {
     @Override
     public void onCreate() {
         super.onCreate();
-        Log.e("logx","xxxxxxx application");
         AndPermission.with(this)
                 .permission(Permission.WRITE_EXTERNAL_STORAGE)
                 .onGranted(new Action() {

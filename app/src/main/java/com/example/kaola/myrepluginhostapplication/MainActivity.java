@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
 
         preloadBtn = findViewById(R.id.preloadPlugin);
-        preloadBtn.setOnClickListener(new View.OnClickListener(){
+        preloadBtn.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View view) {
@@ -46,9 +46,7 @@ public class MainActivity extends Activity {
         startBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Log.e("logx","xxxxxx onclick begin");
-                 RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("com.example.kaola.myrepluginpluginapplication", "com.example.kaola.myrepluginpluginapplication.MainActivity"));
-                Log.e("logx","xxxxxx onclick end");
+                RePlugin.startActivity(MainActivity.this, RePlugin.createIntent("com.example.kaola.myrepluginpluginapplication", "com.example.kaola.myrepluginpluginapplication.MainActivity"));
             }
         });
         startTwoBtn = findViewById(R.id.startTwoPlugin);
