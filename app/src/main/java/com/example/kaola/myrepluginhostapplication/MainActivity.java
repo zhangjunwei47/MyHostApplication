@@ -19,7 +19,7 @@ import java.io.InputStream;
 public class MainActivity extends Activity {
 
 
-    Button preloadBtn, installBtn, startBtn, startTwoBtn, startFragment;
+    Button preloadBtn, installBtn, startBtn, startTwoBtn, startFragment, sendMessage;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +63,14 @@ public class MainActivity extends Activity {
                 Intent intent = new Intent();
                 intent.setClass(MainActivity.this, TestShowFragmentActivity.class);
                 startActivity(intent);
+            }
+        });
+        sendMessage = findViewById(R.id.sendMessage);
+        sendMessage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent("com.kaola.broadcast.test");
+                sendBroadcast(intent);
             }
         });
     }
