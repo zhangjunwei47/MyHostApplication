@@ -16,6 +16,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 
+import xiaofei.library.hermeseventbus.HermesEventBus;
+
 public class MainActivity extends Activity {
 
 
@@ -25,7 +27,6 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
         preloadBtn = findViewById(R.id.preloadPlugin);
         preloadBtn.setOnClickListener(new View.OnClickListener() {
 
@@ -39,7 +40,7 @@ public class MainActivity extends Activity {
         installBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                installExternalPlugin();
+                installExternalPlugin("oneApp.apk");
             }
         });
         startBtn = findViewById(R.id.start_activity_btn);
@@ -73,11 +74,20 @@ public class MainActivity extends Activity {
                 sendBroadcast(intent);
             }
         });
+        // 20s 后发送一个消息
+        sendMessage.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                EventMessage eventMessage = new EventMessage();
+                eventMessage.setMsg("宿主app");
+                eventMessage.setTag("event");
+                HermesEventBus.getDefault().post(eventMessage);
+            }
+        }, 20000);
     }
 
 
-    private void installExternalPlugin() {
-        String oneAppName = "oneApp.apk";
+    private void installExternalPlugin(String oneAppName) {
         String oneAppPath = "myapk" + File.separator + oneAppName;
 
         // 文件是否已经存在？直接删除重来
@@ -127,4 +137,5 @@ public class MainActivity extends Activity {
             }
         }
     }
+
 }

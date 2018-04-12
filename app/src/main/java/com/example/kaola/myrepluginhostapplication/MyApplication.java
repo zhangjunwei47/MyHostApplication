@@ -10,6 +10,8 @@ import com.yanzhenjie.permission.Permission;
 
 import java.util.List;
 
+import xiaofei.library.hermeseventbus.HermesEventBus;
+
 /**
  * Created by zhaojing on 2018/2/12.
  */
@@ -35,5 +37,6 @@ public class MyApplication extends RePluginApplication {
         }).start();
         mContext = getApplicationContext();
         RePlugin.enableDebugger(mContext, true);
+        HermesEventBus.getDefault().init(this);
     }
 }

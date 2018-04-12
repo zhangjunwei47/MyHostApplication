@@ -28,4 +28,5 @@ dependencies {
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     compile 'com.qihoo360.replugin:replugin-host-lib:2.2.2'
     implementation 'com.yanzhenjie:permission:2.0.0-rc2'
+    compile 'xiaofei.library:hermes-eventbus:0.3.0'
 }

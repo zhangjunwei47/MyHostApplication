@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: xiaofei.library:hermes-0.7.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hermes-0.7.0.aar/a243c1653b0b44aface26dd77750f5e7/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hermes-0.7.0.aar/a243c1653b0b44aface26dd77750f5e7/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/xiaofei.library/hermes/0.7.0/6d3e54ddf38987a2147dfab9b000db6c1e213e4b/hermes-0.7.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="Gradle: xiaofei.library:hermes-eventbus-0.3.0">
+    <CLASSES>
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hermes-eventbus-0.3.0.aar/574c45fda936a61165edf669cdeda43d/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/hermes-eventbus-0.3.0.aar/574c45fda936a61165edf669cdeda43d/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/xiaofei.library/hermes-eventbus/0.3.0/cee5a609631eec3dda2be029fdf83a8901d9b3dd/hermes-eventbus-0.3.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
